@@ -1,0 +1,112 @@
+AddDefaultCharset UTF-8
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+### httacces ! Administrador ####
+
+RewriteEngine On
+
+RewriteRule ^admin/dashboard$ admin/dashboard.php
+RewriteRule ^admin/dashboard$ admin/dashboard.php
+
+
+RewriteEngine On
+
+RewriteRule ^admin/team$ admin/team.php
+RewriteRule ^admin/team$ admin/team.php
+
+RewriteEngine On
+
+RewriteRule ^admin/articles$ admin/listarticle.php
+RewriteRule ^admin/articles/$ admin/listarticle.php
+
+RewriteEngine On
+
+RewriteRule ^admin/articles/add$ admin/addarticle.php
+RewriteRule ^admin/articles/add/$ admin/addarticle.php
+
+RewriteEngine On
+
+RewriteRule ^admin/category/add$ admin/addcategory.php
+RewriteRule ^admin/category/add/$ admin/addcategory.php
+
+RewriteEngine On
+
+RewriteRule ^admin/job/add$ admin/addjob.php
+RewriteRule ^admin/job/add/$ admin/addjob.php
+
+RewriteEngine On
+
+RewriteRule ^admin/articles/edit$ admin/listarticle.php
+RewriteRule ^admin/articles/edit/$ admin/listarticle.php
+
+RewriteRule ^admin/articles/edit/([a-zA-Z0-9_-]+)/$ admin/edit.php?ida=$1
+RewriteRule ^admin/articles/edit/([a-zA-Z0-9_-]+)$ admin/edit.php?ida=$1
+
+
+RewriteEngine On
+
+RewriteRule ^admin/category$ admin/listcategory.php
+RewriteRule ^admin/category/$ admin/listcategory.php
+
+
+RewriteEngine On
+
+RewriteRule ^admin/articles/category/([a-zA-Z0-9_-]+)$ listcategory.php?section=$1
+RewriteRule ^admin/articles/category/([a-zA-Z0-9_-]+)/$ listcategory.php?section=$1
+
+
+RewriteEngine On
+
+RewriteRule ^admin/job$ admin/listjob.php
+RewriteRule ^admin/job/$ admin/listjob.php
+
+#httacces Starterdaily.com
+	
+RewriteEngine On
+
+RewriteRule ^articulos/$ articulos.php
+RewriteRule ^empleos/$ jobs.php
+RewriteRule ^articulos$ articulos.php
+RewriteRule ^empleos$ jobs.php
+
+RewriteEngine On
+
+RewriteRule ^empleos/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ singlejobs.php?category=$1&nameJobs=$2
+RewriteRule ^empleos/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ singlejobs.php?category=$1&nameJobs=$2
+
+RewriteEngine On
+
+RewriteRule ^category/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ single-articles.php?category=$1&idArticle=$2
+RewriteRule ^category/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ single-articles.php?category=$1&idArticle=$2
+
+RewriteEngine On
+
+RewriteRule ^category/([a-zA-Z0-9_-]+)$ category.php?category=$1
+RewriteRule ^category/([a-zA-Z0-9_-]+)/$ category.php?category=$1
+
+RewriteRule ^category/([a-zA-Z0-9_-]+)/page/([0-9]+)$ category.php?category=$1/page/page=$2
+RewriteRule ^category/([a-zA-Z0-9_-]+)/page/([0-9]+)/$ category.php?category=$1/page/page=$2
+
+RewriteEngine On
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ profile-user.php?username=$1
+RewriteRule ^([a-zA-Z0-9_-]+)/$ profile-user.php?username=$1
+
+RewriteEngine On
+
+RewriteRule ^friends/([a-zA-Z0-9_-]+)$ friends.php?username=$1
+RewriteRule ^friends/([a-zA-Z0-9_-]+)/$ friends.php?username=$1
+
+RewriteEngine On
+
+RewriteRule ^friends/([a-zA-Z0-9_-]+)/([0-9]+)$ friends.php?username=$1/page=$2
+RewriteRule ^friends/([a-zA-Z0-9_-]+)/([0-9]+)/$ friends.php?username=$1/page=$2
+
+
+
+
+
+
+
